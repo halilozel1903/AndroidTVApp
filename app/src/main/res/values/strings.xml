@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">AndroidTVTutorial</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_details">DetailsActivity</string>
+
+    <string name="error">Error</string>
+    <!-- Error messages -->
+    <string name="video_error_media_load_timeout">Media loading timed out</string>
+    <string name="video_error_server_inaccessible">Media server was not reachable</string>
+    <string name="video_error_unknown_error">Failed to load video</string>
+    <string name="error_fragment_message">An error occurred</string>
+    <string name="dismiss_error">Dismiss</string>
+    <string name="oops">Oops</string>
+</resources>
