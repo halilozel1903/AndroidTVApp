@@ -96,7 +96,36 @@ public class VideoDetailsFragment extends DetailsFragment {
             /* 1st row: DetailsOverviewRow */
             SparseArrayObjectAdapter sparseArrayObjectAdapter = new SparseArrayObjectAdapter();
             for (int i = 0; i<10; i++){
-                sparseArrayObjectAdapter.set(i, new Action(i, "label1", "label2"));
+
+                if (mSelectedMovie.getTitle().equals("Sherlock")){
+
+                    if (i == 1){
+                        sparseArrayObjectAdapter.set(1, new Action(1, "Sherlock", "Season 1"));
+                    }else if (i == 2){
+
+                        sparseArrayObjectAdapter.set(2, new Action(2, "Sherlock", "Season 2"));
+                    }else if (i == 3){
+
+                        sparseArrayObjectAdapter.set(3, new Action(3, "Sherlock", "Season 3"));
+                    }else if (i == 4){
+
+                        sparseArrayObjectAdapter.set(4, new Action(4, "Sherlock", "Season 4"));
+                    }
+                }  if (mSelectedMovie.getTitle().equals("Stranger Things")){
+
+                    if (i == 1){
+                        sparseArrayObjectAdapter.set(1, new Action(1, "Stranger Things", "Season 1"));
+                    }else if (i == 2){
+
+                        sparseArrayObjectAdapter.set(2, new Action(2, "Stranger Things", "Season 2"));
+                    }else if (i == 3){
+
+                        sparseArrayObjectAdapter.set(3, new Action(3, "Stranger Things", "Season 3"));
+                    }
+                }
+
+
+
             }
             row.setActionsAdapter(sparseArrayObjectAdapter);
 
@@ -104,15 +133,26 @@ public class VideoDetailsFragment extends DetailsFragment {
             ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
             for(int i = 0; i < 10; i++){
                 Movie movie = new Movie();
-                if(i%3 == 0) {
-                    movie.setCardImageUrl("http://heimkehrend.raindrop.jp/kl-hacker/wp-content/uploads/2014/08/DSC02580.jpg");
-                } else if (i%3 == 1) {
-                    movie.setCardImageUrl("http://heimkehrend.raindrop.jp/kl-hacker/wp-content/uploads/2014/08/DSC02630.jpg");
-                } else {
-                    movie.setCardImageUrl("http://heimkehrend.raindrop.jp/kl-hacker/wp-content/uploads/2014/08/DSC02529.jpg");
+                if(i==0) {
+                    movie.setCardImageUrl("https://wallpapercave.com/wp/wp2720749.jpg");
+                    movie.setTitle("Sherlock");
+                    movie.setStudio("BBC One");
+
+                }else if(i==1) {
+                    movie.setCardImageUrl("https://wallpapercave.com/wp/wp1839580.jpg");
+                    movie.setTitle("Stranger Things");
+                    movie.setStudio("Netflix");
+
+                }else if (i == 2) {
+                    movie.setCardImageUrl("https://wallpapercave.com/wp/wp4261117.jpg");
+                    movie.setTitle("Black Mirror");
+                    movie.setStudio("Netflix");
+                }else if (i==3){
+                    movie.setCardImageUrl("https://wallpapercave.com/wp/wp4056398.png");
+                    movie.setTitle("Dark");
+                    movie.setStudio("Netflix");
                 }
-                movie.setTitle("title" + i);
-                movie.setStudio("studio" + i);
+
                 listRowAdapter.add(movie);
             }
             HeaderItem headerItem = new HeaderItem(0, "Related Videos");

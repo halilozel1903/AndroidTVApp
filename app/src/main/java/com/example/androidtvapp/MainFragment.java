@@ -34,7 +34,6 @@ import android.view.Gravity;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
 
 
 
@@ -45,10 +44,12 @@ public class MainFragment extends BrowseFragment {
     private static final String TAG = MainFragment.class.getSimpleName();
 
     private ArrayObjectAdapter mRowsAdapter;
+
     private static final int GRID_ITEM_WIDTH = 300;
     private static final int GRID_ITEM_HEIGHT = 200;
 
     private static PicassoBackgroundManager picassoBackgroundManager = null;
+    String description="";
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -120,49 +121,56 @@ public class MainFragment extends BrowseFragment {
         mRowsAdapter = new ArrayObjectAdapter(new ListRowPresenter());
 
         /* GridItemPresenter */
-        HeaderItem gridItemPresenterHeader = new HeaderItem(0, "GridItemPresenter");
+        HeaderItem gridItemPresenterHeader = new HeaderItem(0, "Movies");
 
         GridItemPresenter mGridPresenter = new GridItemPresenter();
         ArrayObjectAdapter gridRowAdapter = new ArrayObjectAdapter(mGridPresenter);
         gridRowAdapter.add("ErrorFragment");
-        gridRowAdapter.add("ITEM 2");
-        gridRowAdapter.add("ITEM 3");
+        gridRowAdapter.add("New Movies");
+        gridRowAdapter.add("Old Movies");
         mRowsAdapter.add(new ListRow(gridItemPresenterHeader, gridRowAdapter));
 
         /* CardPresenter */
-        HeaderItem cardPresenterHeader = new HeaderItem(1, "CardPresenter");
+        HeaderItem cardPresenterHeader = new HeaderItem(1, "Series");
         CardPresenter cardPresenter = new CardPresenter();
         ArrayObjectAdapter cardRowAdapter = new ArrayObjectAdapter(cardPresenter);
 
         for(int i=0; i<10; i++) {
             Movie movie = new Movie();
-            if(i%3 == 0) {
-                movie.setCardImageUrl("https://wallpapercave.com/wp/wp1839580.jpg");
-            } else if (i%3 == 1) {
-                movie.setCardImageUrl("https://wallpapercave.com/wp/wp4261117.jpg");
-            } else {
+
+            if(i==0) {
                 movie.setCardImageUrl("https://wallpapercave.com/wp/wp2720749.jpg");
+                movie.setTitle("Sherlock");
+                movie.setStudio("BBC One");
+                description = "In this updated take on Sir Arthur Conan Doyle's beloved mystery tales, the eccentric sleuth prowls the streets of modern London in search of clues.";
+
+            }else if(i==1) {
+                movie.setCardImageUrl("https://wallpapercave.com/wp/wp1839580.jpg");
+                movie.setTitle("Stranger Things");
+                movie.setStudio("Netflix");
+                description = "This sci-fi anthology series explores a twisted, high-tech near-future where humanity's greatest innovations and darkest instincts collide.";
+
+            }else if (i == 2) {
+                movie.setCardImageUrl("https://wallpapercave.com/wp/wp4261117.jpg");
+                movie.setTitle("Black Mirror");
+                movie.setStudio("Netflix");
+                description = "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.";
+            }else if (i==3){
+                movie.setCardImageUrl("https://wallpapercave.com/wp/wp4056398.png");
+                movie.setTitle("Dark");
+                movie.setStudio("Netflix");
+                description = "A missing child sets four families on a frantic hunt for answers as they unearth a mind-bending mystery that spans three generations.";
             }
-            movie.setTitle("title" + i);
-            movie.setStudio("studio" + i);
-            String description = "Lorem ipsum dolor sit amet, qui mundi vivendum cu. Mazim dicant possit te his. Quo solet dicant prodesset eu, pri deseruisse concludaturque ea, saepe maiorum sea et. Impetus discere sed at. Vim eu novum erant integre, te tale voluptatibus est. Facer labores te mel.\n" +
-                    "\n" +
-                    "Dictas denique qualisque mea id, cu mei verear fabellas. Mel no autem nusquam, viderer oblique te mei. At minimum corpora consulatu vim. Cibo nominavi vis no, in verterem vulputate eos, essent iriure cu vel. Ius ferri expetendis ad, omnes aeterno nominati id his, eum debitis lobortis comprehensam id.\n" +
-                    "\n" +
-                    "Illud dicit nostrud sit no. Eu quod nostro pro. Ut gubergren mnesarchum has, nostro detracto scriptorem et quo, no illud phaedrum recteque sea. Ad his summo probatus recusabo. Qui amet tale viris et, ei his quodsi torquatos adipiscing. Laudem malorum no eum, accusam mandamus sit ex, est ut tractatos dissentiet. Dictas feugiat usu et, an his cibo appareat placerat, eu quis dignissim qui.\n" +
-                    "\n" +
-                    "Euripidis neglegentur eu per, denique singulis vel cu, malis dolore ne duo. Cum no iracundia persecuti expetendis. Vim alii dolore malorum at, veniam perfecto salutandi cu nec, vix ad nonumes consulatu scripserit. At sit nonumy dolores aliquando, eu nam sumo legere. Eu maiorum adipisci torquatos his, vidit appareat eos no.\n" +
-                    "\n" +
-                    "Solet laboramus no quo, cu aperiam inermis vix. Eum animal graecis id, ne quodsi abhorreant sit. Tale persequeris te qui. Labitur invenire explicari in vix."
-                    + "Lorem ipsum dolor sit amet, qui mundi vivendum cu. Mazim dicant possit te his. Quo solet dicant prodesset eu, pri deseruisse concludaturque ea, saepe maiorum sea et. Impetus discere sed at. Vim eu novum erant integre, te tale voluptatibus est. Facer labores te mel.\n" +
-                    "\n" +
-                    "Dictas denique qualisque mea id, cu mei verear fabellas. Mel no autem nusquam, viderer oblique te mei. At minimum corpora consulatu vim. Cibo nominavi vis no, in verterem vulputate eos, essent iriure cu vel. Ius ferri expetendis ad, omnes aeterno nominati id his, eum debitis lobortis comprehensam id.\n" +
-                    "\n" +
-                    "Illud dicit nostrud sit no. Eu quod nostro pro. Ut gubergren mnesarchum has, nostro detracto scriptorem et quo, no illud phaedrum recteque sea. Ad his summo probatus recusabo. Qui amet tale viris et, ei his quodsi torquatos adipiscing. Laudem malorum no eum, accusam mandamus sit ex, est ut tractatos dissentiet. Dictas feugiat usu et, an his cibo appareat placerat, eu quis dignissim qui.\n" +
-                    "\n" +
-                    "Euripidis neglegentur eu per, denique singulis vel cu, malis dolore ne duo. Cum no iracundia persecuti expetendis. Vim alii dolore malorum at, veniam perfecto salutandi cu nec, vix ad nonumes consulatu scripserit. At sit nonumy dolores aliquando, eu nam sumo legere. Eu maiorum adipisci torquatos his, vidit appareat eos no.\n" +
-                    "\n" +
-                    "Solet laboramus no quo, cu aperiam inermis vix. Eum animal graecis id, ne quodsi abhorreant sit. Tale persequeris te qui. Labitur invenire explicari in vix.";
+
+
+             else {
+                movie.setCardImageUrl("https://store-images.s-microsoft.com/image/apps.55787.9007199266246365.687a10a8-4c4a-4a47-8ec5-a95f70d8852d.12c2c5b7-0d97-4635-9b57-8a35da0f4c79?mode=scale&q=90&h=1080&w=1920");
+                movie.setTitle("Saat Teknoloji");
+                movie.setStudio("Saat Teknoloji");
+                description = "New Series and Movies are coming soon";
+            }
+
+
             movie.setDescription(description);
             cardRowAdapter.add(movie);
         }
@@ -173,10 +181,7 @@ public class MainFragment extends BrowseFragment {
         setAdapter(mRowsAdapter);
     }
 
-    /**
-     * from AOSP sample source code
-     * GridItemPresenter class. Show TextView with item type String.
-     */
+
     private class GridItemPresenter extends Presenter {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent) {
