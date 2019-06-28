@@ -8,7 +8,7 @@ Android TV Application is coming soon
 
 ![Screenshot](pic1.png)
 
-### Series
+### Series Screens
 
 ![Screenshot](pic2.png)
 
