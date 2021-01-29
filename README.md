@@ -1,6 +1,6 @@
 # Android TV App
 
-Android TV Application is coming soon
+We will learn how to develop a basic Android TV application. 
 
 ## Screenshots
 
@@ -41,11 +41,11 @@ Android TV Application is coming soon
 <br><br>
 
 
-### Coming Soon Series
+### Series
 
 ![Screenshot](pic7.png)
 
-### Coming Soon Series Related Videos
+### Series Related Videos
 
 ![Screenshot](pic11.png)
 
