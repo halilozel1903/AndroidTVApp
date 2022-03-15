@@ -4,9 +4,15 @@
 
 Android TV is a version of the Android operating system. It is developed by Google for soundbars, set-top boxes, digital media players, and TVs with native applications. It is a replacement for Google TV. The Android TV platform was first launched in June 2014.This platform has also been adopted as smart TV middleware by a company such as Sharp and Sony.
 
+Build apps that let users experience your app's immersive content on the big screen. Users can discover your content recommendations on the home screen, and the leanback library provides APIs to help you build a great use experience for a remote control.
+
+
 ## Screenshots 📸
 
-Build apps that let users experience your app's immersive content on the big screen. Users can discover your content recommendations on the home screen, and the leanback library provides APIs to help you build a great use experience for a remote control.
+TV celebrates content by making it front and center. Whether you’re looking for movies, games, or TV, it’s about finding and enjoying content with the least amount of friction.
+TV is colorful, guided by ambient movement, with immediate access to content. These qualities define the experience of TV and form the foundation of Android TV’s design.
+
+Android TV is cinematic, fun, fluid, and fast.
 
 ### Movies 🎬
 
@@ -46,7 +52,7 @@ Build apps that let users experience your app's immersive content on the big scr
 ```
 MIT License
 
-Copyright (c) 2021 Halil OZEL
+Copyright (c) 2022 Halil OZEL
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
