@@ -7,12 +7,10 @@ Android TV is a version of the Android operating system. It is developed by Goog
 Build apps that let users experience your app's immersive content on the big screen. Users can discover your content recommendations on the home screen, and the leanback library provides APIs to help you build a great use experience for a remote control.
 
 
-## Screenshots 📸
+## App Screenshots 📸
 
 TV celebrates content by making it front and center. Whether you’re looking for movies, games, or TV, it’s about finding and enjoying content with the least amount of friction.
 TV is colorful, guided by ambient movement, with immediate access to content. These qualities define the experience of TV and form the foundation of Android TV’s design.
-
-Android TV is cinematic, fun, fluid, and fast.
 
 ### Movies 🎬
 
@@ -27,12 +25,6 @@ Android TV is cinematic, fun, fluid, and fast.
 
 
 ![Screenshot](pic4.png)
-
-
-![Screenshot](pic5.png)
-
-
-![Screenshot](pic6.png)
 
 
 ### Series Detail Screens 🕵🏻‍♀️
