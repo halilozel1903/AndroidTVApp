@@ -14,14 +14,14 @@
 package com.example.androidtvapp;
 
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
+import androidx.core.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 
 /*
  * This class demonstrates how to extend ErrorFragment
  */
-public class ErrorFragment extends android.support.v17.leanback.app.ErrorFragment {
+public class ErrorFragment extends androidx.leanback.app.ErrorFragment {
 
 
     private static final String TAG = ErrorFragment.class.getSimpleName();

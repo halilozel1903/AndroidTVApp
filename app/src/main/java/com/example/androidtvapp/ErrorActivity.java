@@ -5,10 +5,6 @@ import android.os.Bundle;
 
 public class ErrorActivity extends Activity {
 
-    private static final String TAG = ErrorActivity.class.getSimpleName();
-
-    private ErrorFragment mErrorFragment;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +14,7 @@ public class ErrorActivity extends Activity {
     }
 
     private void testError() {
-        mErrorFragment = new ErrorFragment();
+        ErrorFragment mErrorFragment = new ErrorFragment();
         getFragmentManager().beginTransaction().add(R.id.main_browse_fragment, mErrorFragment).commit();
     }
 }

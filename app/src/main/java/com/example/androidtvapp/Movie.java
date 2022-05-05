@@ -5,9 +5,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class Movie implements Serializable {
-
-    private static final String TAG = Movie.class.getSimpleName();
-
     static final long serialVersionUID = 727566175075960653L;
     private long id;
     private String title;

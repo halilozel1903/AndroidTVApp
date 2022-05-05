@@ -2,7 +2,7 @@ package com.example.androidtvapp;
 
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
-import android.support.v17.leanback.app.BackgroundManager;
+import androidx.leanback.app.BackgroundManager;
 import android.util.DisplayMetrics;
 
 public class SimpleBackgroundManager {
