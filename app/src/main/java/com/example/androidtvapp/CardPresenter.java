@@ -1,26 +1,17 @@
-/*
- * Copyright (C) 2014 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
- * in compliance with the License. You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under the License
- * is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
- * or implied. See the License for the specific language governing permissions and limitations under
- * the License.
- */
+
 
 package com.example.androidtvapp;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+
 import androidx.leanback.widget.BaseCardView;
 import androidx.leanback.widget.ImageCardView;
 import androidx.leanback.widget.Presenter;
+
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,15 +30,16 @@ public class CardPresenter extends Presenter {
 
     private static final String TAG = CardPresenter.class.getSimpleName();
 
+    @SuppressLint("StaticFieldLeak")
     private static Context mContext;
-    private static int CARD_WIDTH = 313;
-    private static int CARD_HEIGHT = 176;
+    private static final int CARD_WIDTH = 313;
+    private static final int CARD_HEIGHT = 176;
 
     static class ViewHolder extends Presenter.ViewHolder {
         private Movie mMovie;
-        private ImageCardView mCardView;
-        private Drawable mDefaultCardImage;
-        private PicassoImageCardViewTarget mImageCardViewTarget;
+        private final ImageCardView mCardView;
+        private final Drawable mDefaultCardImage;
+        private final PicassoImageCardViewTarget mImageCardViewTarget;
 
         public ViewHolder(View view) {
             super(view);
@@ -102,28 +94,24 @@ public class CardPresenter extends Presenter {
         Movie movie = (Movie) item;
         ((ViewHolder) viewHolder).setMovie(movie);
 
-        Log.d(TAG, "onBindViewHolder");
         if (movie.getCardImageUrl() != null) {
             ((ViewHolder) viewHolder).mCardView.setTitleText(movie.getTitle());
             ((ViewHolder) viewHolder).mCardView.setContentText(movie.getStudio());
             ((ViewHolder) viewHolder).mCardView.setMainImageDimensions(CARD_WIDTH, CARD_HEIGHT);
             ((ViewHolder) viewHolder).updateCardViewImage(movie.getCardImageURI());
-            //((ViewHolder) viewHolder).mCardView.setMainImage(((ViewHolder) viewHolder).getDefaultCardImage());
         }
     }
 
     @Override
     public void onUnbindViewHolder(Presenter.ViewHolder viewHolder) {
-        Log.d(TAG, "onUnbindViewHolder");
     }
 
     @Override
     public void onViewAttachedToWindow(Presenter.ViewHolder viewHolder) {
-        // TO DO
     }
 
     public static class PicassoImageCardViewTarget implements Target {
-        private ImageCardView mImageCardView;
+        private final ImageCardView mImageCardView;
 
         public PicassoImageCardViewTarget(ImageCardView imageCardView) {
             mImageCardView = imageCardView;
@@ -142,7 +130,6 @@ public class CardPresenter extends Presenter {
 
         @Override
         public void onPrepareLoad(Drawable drawable) {
-            // Do nothing, default_background manager has its own transitions
         }
     }
 

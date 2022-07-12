@@ -21,29 +21,27 @@ public class PicassoBackgroundManager {
 
     private static final String TAG = PicassoBackgroundManager.class.getSimpleName();
 
-    private static int BACKGROUND_UPDATE_DELAY = 500;
-    private final int DEFAULT_BACKGROUND_RES_ID = R.drawable.default_background;
     private static Drawable mDefaultBackground;
     // Handler attached with main thread
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
-    private Activity mActivity;
-    private BackgroundManager mBackgroundManager = null;
-    private DisplayMetrics mMetrics;
+    private final Activity mActivity;
+    private final DisplayMetrics mMetrics;
     private URI mBackgroundURI;
-    private PicassoBackgroundManagerTarget mBackgroundTarget;
+    private final PicassoBackgroundManagerTarget mBackgroundTarget;
 
-    Timer mBackgroundTimer; // null when no UpdateBackgroundTask is running.
+    // null when no UpdateBackgroundTask is running.
+    Timer mBackgroundTimer;
 
     public PicassoBackgroundManager (Activity activity) {
         mActivity = activity;
+        int DEFAULT_BACKGROUND_RES_ID = R.drawable.default_background;
         mDefaultBackground = activity.getDrawable(DEFAULT_BACKGROUND_RES_ID);
-        mBackgroundManager = BackgroundManager.getInstance(activity);
+        BackgroundManager mBackgroundManager = BackgroundManager.getInstance(activity);
         mBackgroundManager.attach(activity.getWindow());
         mBackgroundTarget = new PicassoBackgroundManagerTarget(mBackgroundManager);
         mMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(mMetrics);
-
     }
 
     /**
@@ -55,6 +53,7 @@ public class PicassoBackgroundManager {
         }
         mBackgroundTimer = new Timer();
         /* set delay time to reduce too much background image loading process */
+        int BACKGROUND_UPDATE_DELAY = 500;
         mBackgroundTimer.schedule(new UpdateBackgroundTask(), BACKGROUND_UPDATE_DELAY);
     }
 
@@ -113,7 +112,7 @@ public class PicassoBackgroundManager {
      * Inner class
      * Picasso target for updating default_background images
      */
-    public class PicassoBackgroundManagerTarget implements Target {
+    public static class PicassoBackgroundManagerTarget implements Target {
         BackgroundManager mBackgroundManager;
 
         public PicassoBackgroundManagerTarget(BackgroundManager backgroundManager) {
@@ -144,10 +143,7 @@ public class PicassoBackgroundManager {
 
             PicassoBackgroundManagerTarget that = (PicassoBackgroundManagerTarget) o;
 
-            if (!mBackgroundManager.equals(that.mBackgroundManager))
-                return false;
-
-            return true;
+            return mBackgroundManager.equals(that.mBackgroundManager);
         }
 
         @Override
@@ -155,7 +151,4 @@ public class PicassoBackgroundManager {
             return mBackgroundManager.hashCode();
         }
     }
-
-
-
 }
