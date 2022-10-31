@@ -1,5 +1,3 @@
-
-
 package com.example.androidtvapp;
 
 import androidx.leanback.widget.AbstractDetailsDescriptionPresenter;
