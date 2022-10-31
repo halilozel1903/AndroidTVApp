@@ -64,7 +64,7 @@ public class VideoDetailsFragment extends DetailsFragment {
         protected DetailsOverviewRow doInBackground(Movie... params) {
             DetailsOverviewRow row = new DetailsOverviewRow(mSelectedMovie);
             try {
-                Bitmap poster = Picasso.with(getActivity())
+                Bitmap poster = Picasso.get()
                         .load(mSelectedMovie.getCardImageUrl())
                         .resize(Utils.convertDpToPixel(getActivity().getApplicationContext(), DETAIL_THUMB_WIDTH),
                                 Utils.convertDpToPixel(getActivity().getApplicationContext(), DETAIL_THUMB_HEIGHT))
@@ -120,21 +120,21 @@ public class VideoDetailsFragment extends DetailsFragment {
             for (int i = 0; i < 10; i++) {
                 Movie movie = new Movie();
                 if (i == 0) {
-                    movie.setCardImageUrl("https://wallpapercave.com/wp/wp2720749.jpg");
+                    movie.setCardImageUrl("https://pbs.twimg.com/media/C2Dv8DcVEAAC5B_.jpg");
                     movie.setTitle("Sherlock");
                     movie.setStudio("BBC One");
 
                 } else if (i == 1) {
-                    movie.setCardImageUrl("https://wallpapercave.com/wp/wp1839580.jpg");
+                    movie.setCardImageUrl("https://frpnet.net/wp-content/uploads/2022/05/kapak.jpg");
                     movie.setTitle("Stranger Things");
                     movie.setStudio("Netflix");
 
                 } else if (i == 2) {
-                    movie.setCardImageUrl("https://wallpapercave.com/wp/wp4261117.jpg");
+                    movie.setCardImageUrl("https://occ-0-784-1380.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABQkofIypds_rD7yInykgr059MHPbl0gpMiFZ4mgL5Vuu2JRxvs-7fzdvN97DD0Ir2126xeFWMucX9IZJVmH33Hv1WfUJ4GB86SVY.jpg");
                     movie.setTitle("Black Mirror");
                     movie.setStudio("Netflix");
                 } else if (i == 3) {
-                    movie.setCardImageUrl("https://wallpapercave.com/wp/wp4056398.png");
+                    movie.setCardImageUrl("https://m.media-amazon.com/images/M/MV5BMjMzNjUxMDk0MF5BMl5BanBnXkFtZTgwMjY1OTgyNDM@._V1_.jpg");
                     movie.setTitle("Dark");
                     movie.setStudio("Netflix");
                 }

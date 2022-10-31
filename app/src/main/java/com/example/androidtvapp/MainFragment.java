@@ -134,12 +134,12 @@ public class MainFragment extends BrowseFragment {
                 description = "This sci-fi anthology series explores a twisted, high-tech near-future where humanity's greatest innovations and darkest instincts collide.";
 
             } else if (i == 2) {
-                movie.setCardImageUrl("https://wallpapercave.com/wp/wp4261117.jpg");
+                movie.setCardImageUrl("https://occ-0-784-1380.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABQkofIypds_rD7yInykgr059MHPbl0gpMiFZ4mgL5Vuu2JRxvs-7fzdvN97DD0Ir2126xeFWMucX9IZJVmH33Hv1WfUJ4GB86SVY.jpg");
                 movie.setTitle("Black Mirror");
                 movie.setStudio("Netflix");
                 description = "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.";
             } else if (i == 3) {
-                movie.setCardImageUrl("https://wallpapercave.com/wp/wp4056398.png");
+                movie.setCardImageUrl("https://m.media-amazon.com/images/M/MV5BMjMzNjUxMDk0MF5BMl5BanBnXkFtZTgwMjY1OTgyNDM@._V1_.jpg");
                 movie.setTitle("Dark");
                 movie.setStudio("Netflix");
                 description = "A missing child sets four families on a frantic hunt for answers as they unearth a mind-bending mystery that spans three generations.";
