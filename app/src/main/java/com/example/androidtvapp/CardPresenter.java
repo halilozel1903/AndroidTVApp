@@ -65,7 +65,7 @@ public class CardPresenter extends Presenter {
         }
 
         protected void updateCardViewImage(URI uri) {
-            Picasso.with(mContext)
+            Picasso.get()
                     .load(uri.toString())
                     .resize(Utils.convertDpToPixel(mContext, CARD_WIDTH),
                             Utils.convertDpToPixel(mContext, CARD_HEIGHT))
@@ -124,8 +124,9 @@ public class CardPresenter extends Presenter {
         }
 
         @Override
-        public void onBitmapFailed(Drawable drawable) {
-            mImageCardView.setMainImage(drawable);
+        public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+            Drawable bitmapDrawable = new BitmapDrawable(mContext.getResources(), String.valueOf(errorDrawable));
+            mImageCardView.setMainImage(bitmapDrawable);
         }
 
         @Override

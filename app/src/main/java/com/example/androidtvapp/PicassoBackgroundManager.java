@@ -96,7 +96,7 @@ public class PicassoBackgroundManager {
 
     private void updateBackground(URI uri) {
         try {
-            Picasso.with(mActivity)
+            Picasso.get()
                     .load(uri.toString())
                     .resize(mMetrics.widthPixels, mMetrics.heightPixels)
                     .centerCrop()
@@ -125,9 +125,10 @@ public class PicassoBackgroundManager {
         }
 
         @Override
-        public void onBitmapFailed(Drawable drawable) {
-            this.mBackgroundManager.setDrawable(drawable);
+        public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+            this.mBackgroundManager.setDrawable(errorDrawable);
         }
+
 
         @Override
         public void onPrepareLoad(Drawable drawable) {
