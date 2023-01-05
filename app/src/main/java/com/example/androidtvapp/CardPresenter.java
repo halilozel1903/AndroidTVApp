@@ -103,12 +103,10 @@ public class CardPresenter extends Presenter {
     }
 
     @Override
-    public void onUnbindViewHolder(Presenter.ViewHolder viewHolder) {
-    }
+    public void onUnbindViewHolder(Presenter.ViewHolder viewHolder) {}
 
     @Override
-    public void onViewAttachedToWindow(Presenter.ViewHolder viewHolder) {
-    }
+    public void onViewAttachedToWindow(Presenter.ViewHolder viewHolder) {}
 
     public static class PicassoImageCardViewTarget implements Target {
         private final ImageCardView mImageCardView;
@@ -130,8 +128,6 @@ public class CardPresenter extends Presenter {
         }
 
         @Override
-        public void onPrepareLoad(Drawable drawable) {
-        }
+        public void onPrepareLoad(Drawable drawable) {}
     }
-
 }

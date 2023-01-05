@@ -25,16 +25,14 @@ public class PicassoBackgroundManager {
     // Handler attached with main thread
     private final Handler mHandler = new Handler(Looper.getMainLooper());
 
-    private final Activity mActivity;
     private final DisplayMetrics mMetrics;
     private URI mBackgroundURI;
     private final PicassoBackgroundManagerTarget mBackgroundTarget;
 
-    // null when no UpdateBackgroundTask is running.
+    // Null when no UpdateBackgroundTask is running.
     Timer mBackgroundTimer;
 
     public PicassoBackgroundManager (Activity activity) {
-        mActivity = activity;
         int DEFAULT_BACKGROUND_RES_ID = R.drawable.default_background;
         mDefaultBackground = activity.getDrawable(DEFAULT_BACKGROUND_RES_ID);
         BackgroundManager mBackgroundManager = BackgroundManager.getInstance(activity);
@@ -62,13 +60,10 @@ public class PicassoBackgroundManager {
         @Override
         public void run() {
             /* Here is TimerTask thread, not UI thread */
-            mHandler.post(new Runnable() {
-                @Override
-                public void run() {
-                    /* Here is main (UI) thread */
-                    if (mBackgroundURI != null) {
-                        updateBackground(mBackgroundURI);
-                    }
+            mHandler.post(() -> {
+                /* Here is main (UI) thread */
+                if (mBackgroundURI != null) {
+                    updateBackground(mBackgroundURI);
                 }
             });
         }

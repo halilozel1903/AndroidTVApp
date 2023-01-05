@@ -3,7 +3,6 @@ package com.example.androidtvapp;
 import android.os.Bundle;
 
 public class ErrorFragment extends androidx.leanback.app.ErrorFragment {
-    private static final String TAG = ErrorFragment.class.getSimpleName();
     private static final boolean TRANSLUCENT = true;
 
     @Override

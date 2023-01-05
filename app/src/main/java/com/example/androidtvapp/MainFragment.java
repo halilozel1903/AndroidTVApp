@@ -37,15 +37,10 @@ public class MainFragment extends BrowseFragment {
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
-        Log.i(TAG, "onActivityCreated");
         super.onActivityCreated(savedInstanceState);
-
         setupUIElements();
-
         loadRows();
-
         setupEventListeners();
-
         picassoBackgroundManager = new PicassoBackgroundManager(getActivity());
     }
 
@@ -61,7 +56,7 @@ public class MainFragment extends BrowseFragment {
             // each time the item is clicked, code inside here will be executed.
             if (item instanceof Movie) {
                 Movie movie = (Movie) item;
-                Log.d(TAG, "Item: " + item.toString());
+                Log.d(TAG, "Item: " + item);
                 Intent intent = new Intent(getActivity(), DetailsActivity.class);
                 intent.putExtra(DetailsActivity.MOVIE, movie);
 
@@ -181,8 +176,6 @@ public class MainFragment extends BrowseFragment {
         }
 
         @Override
-        public void onUnbindViewHolder(ViewHolder viewHolder) {
-
-        }
+        public void onUnbindViewHolder(ViewHolder viewHolder) {}
     }
 }
