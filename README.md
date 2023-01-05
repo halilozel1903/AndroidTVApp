@@ -39,12 +39,18 @@ TV is colorful, guided by ambient movement, with immediate access to content. Th
 
 ![Screenshot](pic10.png)
 
+## Donation 💸
+
+If this project help you 💁 you can give me a cup of coffee. ☕
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/halilozel1903)
+
 
 ## License ℹ️
 ```
 MIT License
 
-Copyright (c) 2022 Halil OZEL
+Copyright (c) 2023 Halil OZEL
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
