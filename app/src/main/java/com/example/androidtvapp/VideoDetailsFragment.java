@@ -27,11 +27,8 @@ import java.io.IOException;
 public class VideoDetailsFragment extends DetailsFragment {
 
     private static final String TAG = VideoDetailsFragment.class.getSimpleName();
-
     private static final int DETAIL_THUMB_WIDTH = 274;
     private static final int DETAIL_THUMB_HEIGHT = 274;
-
-
     private static final String MOVIE = "Movie";
 
     private CustomFullWidthDetailsOverviewRowPresenter customFullWidthDetailsOverviewRowPresenter;
