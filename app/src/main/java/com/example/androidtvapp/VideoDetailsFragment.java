@@ -18,11 +18,9 @@ import androidx.leanback.widget.SparseArrayObjectAdapter;
 
 import android.util.Log;
 
-
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
-
 
 public class VideoDetailsFragment extends DetailsFragment {
 
@@ -81,34 +79,25 @@ public class VideoDetailsFragment extends DetailsFragment {
             for (int i = 0; i < 10; i++) {
 
                 if (mSelectedMovie.getTitle().equals("Sherlock")) {
-
                     if (i == 1) {
                         sparseArrayObjectAdapter.set(1, new Action(1, "Sherlock", "Season 1"));
                     } else if (i == 2) {
-
                         sparseArrayObjectAdapter.set(2, new Action(2, "Sherlock", "Season 2"));
                     } else if (i == 3) {
-
                         sparseArrayObjectAdapter.set(3, new Action(3, "Sherlock", "Season 3"));
                     } else if (i == 4) {
-
                         sparseArrayObjectAdapter.set(4, new Action(4, "Sherlock", "Season 4"));
                     }
                 }
                 if (mSelectedMovie.getTitle().equals("Stranger Things")) {
-
                     if (i == 1) {
                         sparseArrayObjectAdapter.set(1, new Action(1, "Stranger Things", "Season 1"));
                     } else if (i == 2) {
-
                         sparseArrayObjectAdapter.set(2, new Action(2, "Stranger Things", "Season 2"));
                     } else if (i == 3) {
-
                         sparseArrayObjectAdapter.set(3, new Action(3, "Stranger Things", "Season 3"));
                     }
                 }
-
-
             }
             row.setActionsAdapter(sparseArrayObjectAdapter);
 
@@ -120,12 +109,10 @@ public class VideoDetailsFragment extends DetailsFragment {
                     movie.setCardImageUrl("https://pbs.twimg.com/media/C2Dv8DcVEAAC5B_.jpg");
                     movie.setTitle("Sherlock");
                     movie.setStudio("BBC One");
-
                 } else if (i == 1) {
                     movie.setCardImageUrl("https://frpnet.net/wp-content/uploads/2022/05/kapak.jpg");
                     movie.setTitle("Stranger Things");
                     movie.setStudio("Netflix");
-
                 } else if (i == 2) {
                     movie.setCardImageUrl("https://occ-0-784-1380.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABQkofIypds_rD7yInykgr059MHPbl0gpMiFZ4mgL5Vuu2JRxvs-7fzdvN97DD0Ir2126xeFWMucX9IZJVmH33Hv1WfUJ4GB86SVY.jpg");
                     movie.setTitle("Black Mirror");
@@ -135,7 +122,6 @@ public class VideoDetailsFragment extends DetailsFragment {
                     movie.setTitle("Dark");
                     movie.setStudio("Netflix");
                 }
-
                 listRowAdapter.add(movie);
             }
             HeaderItem headerItem = new HeaderItem(0, "Related Videos");
