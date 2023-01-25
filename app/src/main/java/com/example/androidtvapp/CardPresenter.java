@@ -110,7 +110,6 @@ public class CardPresenter extends Presenter {
 
     public static class PicassoImageCardViewTarget implements Target {
         private final ImageCardView mImageCardView;
-
         public PicassoImageCardViewTarget(ImageCardView imageCardView) {
             mImageCardView = imageCardView;
         }

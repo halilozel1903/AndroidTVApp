@@ -5,22 +5,13 @@ import android.widget.Toast;
 
 public class Utils {
 
-    /*
-     * Making sure public utility methods remain static
-     */
     private Utils() {
     }
 
-    /**
-     * Shows a (long) toast
-     */
     public static void showToast(Context context, String msg) {
         Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
     }
 
-    /**
-     * Shows a (long) toast.
-     */
     public static void showToast(Context context, int resourceId) {
         Toast.makeText(context, context.getString(resourceId), Toast.LENGTH_LONG).show();
     }
@@ -30,9 +21,6 @@ public class Utils {
         return Math.round((float) dp * density);
     }
 
-    /**
-     * Formats time in milliseconds to hh:mm:ss string format.
-     */
     public static String formatMillis(int millis) {
         String result = "";
         int hr = millis / 3600000;

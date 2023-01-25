@@ -20,7 +20,6 @@ import java.util.TimerTask;
 public class PicassoBackgroundManager {
 
     private static final String TAG = PicassoBackgroundManager.class.getSimpleName();
-
     private static Drawable mDefaultBackground;
     // Handler attached with main thread
     private final Handler mHandler = new Handler(Looper.getMainLooper());
@@ -42,9 +41,6 @@ public class PicassoBackgroundManager {
         activity.getWindowManager().getDefaultDisplay().getMetrics(mMetrics);
     }
 
-    /**
-     * if UpdateBackgroundTask is already running, cancel this task and start new task.
-     */
     private void startBackgroundTimer() {
         if (mBackgroundTimer != null) {
             mBackgroundTimer.cancel();
@@ -79,11 +75,6 @@ public class PicassoBackgroundManager {
         }
     }
 
-    /**
-     * updateBackground with delay
-     * delay time is measured in other Timer task thread.
-     * @param uri
-     */
     public void updateBackgroundWithDelay(URI uri) {
         mBackgroundURI = uri;
         startBackgroundTimer();
@@ -102,11 +93,6 @@ public class PicassoBackgroundManager {
         }
     }
 
-    /**
-     * Copied from AOSP sample code.
-     * Inner class
-     * Picasso target for updating default_background images
-     */
     public static class PicassoBackgroundManagerTarget implements Target {
         BackgroundManager mBackgroundManager;
 

@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 public class ErrorFragment extends androidx.leanback.app.ErrorFragment {
     private static final boolean TRANSLUCENT = true;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

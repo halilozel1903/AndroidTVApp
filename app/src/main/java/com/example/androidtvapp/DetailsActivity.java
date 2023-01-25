@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 
 public class DetailsActivity extends Activity {
-
     public static final String MOVIE = "Movie";
 
     @Override

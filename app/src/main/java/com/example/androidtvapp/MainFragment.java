@@ -24,10 +24,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class MainFragment extends BrowseFragment {
-
-
     private static final String TAG = MainFragment.class.getSimpleName();
-
     private static final int GRID_ITEM_WIDTH = 300;
     private static final int GRID_ITEM_HEIGHT = 200;
 
@@ -144,8 +141,6 @@ public class MainFragment extends BrowseFragment {
                 movie.setStudio("NBC");
                 description = "After becoming the medical director of one of the United State's oldest public hospitals, Dr Max Godwin sets out to reform the institution's neglected and outdated facilities to treat the patients.";
             }
-
-
             movie.setDescription(description);
             cardRowAdapter.add(movie);
         }
@@ -174,7 +169,6 @@ public class MainFragment extends BrowseFragment {
         public void onBindViewHolder(ViewHolder viewHolder, Object item) {
             ((TextView) viewHolder.view).setText((String) item);
         }
-
         @Override
         public void onUnbindViewHolder(ViewHolder viewHolder) {}
     }

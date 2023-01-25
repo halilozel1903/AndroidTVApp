@@ -53,7 +53,8 @@ public class Movie implements Serializable {
         this.cardImageUrl = cardImageUrl;
     }
 
-    public Movie() {}
+    public Movie() {
+    }
 
     public URI getCardImageURI() {
         try {
