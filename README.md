@@ -41,7 +41,7 @@ TV is colorful, guided by ambient movement, with immediate access to content. Th
 
 ## Donation 💸
 
-If this project help you 💁 you can give me a cup of coffee. ☕
+If this project help 💁 you can give me a cup of coffee. ☕
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/halilozel1903)
 
