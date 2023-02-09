@@ -144,7 +144,6 @@ public class MainFragment extends BrowseFragment {
             movie.setDescription(description);
             cardRowAdapter.add(movie);
         }
-
         mRowsAdapter.add(new ListRow(cardPresenterHeader, cardRowAdapter));
 
         /* Set */
