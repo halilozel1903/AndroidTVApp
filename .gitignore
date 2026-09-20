@@ -1,16 +1,17 @@
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
 .DS_Store
 /build
 /captures
 .externalNativeBuild
+<<<<<<< HEAD
 *.apk
 *.aab
 *.hprof
+=======
+.idea/
+keystore.properties
+*.jks
+*.keystore
+>>>>>>> 74212f9 (chore: ignore IDE and signing secrets and untrack .idea)
