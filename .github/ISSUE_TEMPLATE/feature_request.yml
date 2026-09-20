@@ -1,0 +1,21 @@
+name: Feature request
+description: Suggest a focused improvement for the sample
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This repo is a **Leanback learning sample**, not a production streamer. Prefer small, educational changes.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or learning goal
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
