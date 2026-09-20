@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    alias(libs.plugins.android.application)
 }
 
 configurations.configureEach {
@@ -47,9 +47,14 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
+    buildFeatures {
+        buildConfig true
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             if (hasReleaseSigning) {
                 signingConfig signingConfigs.release
@@ -59,9 +64,13 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.leanback:leanback:1.2.0'
-    implementation 'androidx.appcompat:appcompat:1.7.0'
-    implementation 'androidx.fragment:fragment:1.8.5'
-    implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation libs.leanback
+    implementation libs.leanback.preference
+    implementation libs.appcompat
+    implementation libs.fragment
+    implementation libs.recyclerview
+    implementation libs.core
+    implementation libs.core.splashscreen
+    implementation libs.preference
+    implementation libs.picasso
 }
