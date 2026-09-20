@@ -59,7 +59,7 @@ public class MainFragment extends BrowseFragment {
 
                 getActivity().startActivity(intent);
             } else if (item instanceof String) {
-                if (item == "ErrorFragment") {
+                if ("ErrorFragment".equals(item)) {
                     Intent intent = new Intent(getActivity(), ErrorActivity.class);
                     startActivity(intent);
                 }
