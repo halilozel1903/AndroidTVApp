@@ -2,4 +2,14 @@
 <resources>
 
     <style name="AppTheme" parent="@style/Theme.Leanback" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/fastlane_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/app_icon_your_company</item>
+        <item name="postSplashScreenTheme">@style/Theme.Leanback</item>
+    </style>
+
+    <style name="Theme.App.Settings" parent="Theme.Leanback">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay.v14.Leanback</item>
+    </style>
 </resources>
