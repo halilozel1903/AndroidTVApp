@@ -5,13 +5,10 @@
 /build
 /captures
 .externalNativeBuild
-<<<<<<< HEAD
 *.apk
 *.aab
 *.hprof
-=======
 .idea/
 keystore.properties
 *.jks
 *.keystore
->>>>>>> 74212f9 (chore: ignore IDE and signing secrets and untrack .idea)
