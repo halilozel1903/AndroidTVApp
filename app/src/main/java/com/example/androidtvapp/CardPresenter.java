@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
+import androidx.core.content.ContextCompat;
 import androidx.leanback.widget.BaseCardView;
 import androidx.leanback.widget.ImageCardView;
 import androidx.leanback.widget.Presenter;
@@ -45,7 +46,7 @@ public class CardPresenter extends Presenter {
             super(view);
             mCardView = (ImageCardView) view;
             mImageCardViewTarget = new PicassoImageCardViewTarget(mCardView);
-            mDefaultCardImage = mContext.getResources().getDrawable(R.drawable.movie);
+            mDefaultCardImage = ContextCompat.getDrawable(mContext, R.drawable.movie);
         }
 
         public void setMovie(Movie m) {
@@ -85,7 +86,7 @@ public class CardPresenter extends Presenter {
         cardView.setInfoVisibility(BaseCardView.CARD_REGION_VISIBLE_ALWAYS);
         cardView.setFocusable(true);
         cardView.setFocusableInTouchMode(true);
-        cardView.setBackgroundColor(mContext.getResources().getColor(R.color.fastlane_background));
+        cardView.setBackgroundColor(ContextCompat.getColor(mContext, R.color.fastlane_background));
         return new ViewHolder(cardView);
     }
 
