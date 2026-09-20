@@ -21,12 +21,12 @@ def hasReleaseSigning = releaseStorePath && releaseStorePassword && releaseKeyAl
 
 android {
     namespace 'com.example.androidtvapp'
-    compileSdk 34
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.example.androidtvapp"
         minSdk 24
-        targetSdk 34
+        targetSdk 35
         versionCode 1
         versionName "1.0"
     }
@@ -59,7 +59,7 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.leanback:leanback:1.1.0-rc02'
+    implementation 'androidx.leanback:leanback:1.2.0'
     implementation 'androidx.appcompat:appcompat:1.7.0'
     implementation 'androidx.fragment:fragment:1.8.5'
     implementation 'com.squareup.picasso:picasso:2.71828'
