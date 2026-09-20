@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "browseGridBackground": {
+    "assetPath": "backgrounds/grid_selection.png",
+    "fallbackUrl": "https://commondatastorage.googleapis.com/android-tv/Sample%20videos/April%20Fool%27s%202013/Avatar.png"
+  },
+  "series": [
+    {
+      "id": 1,
+      "title": "Sherlock",
+      "studio": "BBC One",
+      "description": "In this updated take on Sir Arthur Conan Doyle's beloved mystery tales, the eccentric sleuth prowls the streets of modern London in search of clues.",
+      "poster": {
+        "assetPath": "posters/sherlock.png",
+        "fallbackUrl": "https://commondatastorage.googleapis.com/android-tv/Sample%20videos/April%20Fool%27s%202013/Avatar.png"
+      },
+      "seasons": ["Season 1", "Season 2", "Season 3", "Season 4"]
+    },
+    {
+      "id": 2,
+      "title": "Stranger Things",
+      "studio": "Netflix",
+      "description": "This sci-fi anthology series explores a twisted, high-tech near-future where humanity's greatest innovations and darkest instincts collide.",
+      "poster": {
+        "assetPath": "posters/stranger_things.png",
+        "fallbackUrl": "https://commondatastorage.googleapis.com/android-tv/Sample%20videos/Dragon%20Ball/Dragon%20Ball%20Z%20Kai.png"
+      },
+      "seasons": ["Season 1", "Season 2", "Season 3"]
+    },
+    {
+      "id": 3,
+      "title": "Black Mirror",
+      "studio": "Netflix",
+      "description": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.",
+      "poster": {
+        "assetPath": "posters/black_mirror.png",
+        "fallbackUrl": "https://commondatastorage.googleapis.com/android-tv/Sample%20videos/Google%20IO/2011/Building%20for%20TV.png"
+      },
+      "seasons": []
+    },
+    {
+      "id": 4,
+      "title": "Dark",
+      "studio": "Netflix",
+      "description": "A missing child sets four families on a frantic hunt for answers as they unearth a mind-bending mystery that spans three generations.",
+      "poster": {
+        "assetPath": "posters/dark.png",
+        "fallbackUrl": "https://commondatastorage.googleapis.com/android-tv/Sample%20videos/Zeitgeist/Zeitgeist_2010_-_Google_thinks_%28WebM%29.png"
+      },
+      "seasons": []
+    },
+    {
+      "id": 5,
+      "title": "New Amsterdam",
+      "studio": "NBC",
+      "description": "After becoming the medical director of one of the United State's oldest public hospitals, Dr Max Godwin sets out to reform the institution's neglected and outdated facilities to treat the patients.",
+      "poster": {
+        "assetPath": "posters/new_amsterdam.png",
+        "fallbackUrl": "https://commondatastorage.googleapis.com/android-tv/Sample%20videos/Studio%20Ghibli/Castle%20in%20the%20Sky.png"
+      },
+      "seasons": []
+    }
+  ]
+}

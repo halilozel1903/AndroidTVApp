@@ -2,7 +2,7 @@
 
 Sample Android TV application built with the [AndroidX Leanback](https://developer.android.com/training/tv/start/start) library. It demonstrates a TV-optimized browse experience: category rows, poster cards, a details screen with related items, and remote-friendly navigation.
 
-The app ships with hard-coded sample movies and series metadata and loads poster images from the network at runtime (Picasso). It is intended as a learning reference, not a production streaming client.
+Sample movies and series come from `app/src/main/assets/catalog.json` with bundled poster assets and documented network fallbacks (Picasso). The project is a learning reference, not a production streaming client.
 
 ## Features
 
@@ -45,7 +45,7 @@ Install [Android Studio](https://developer.android.com/studio) (recommended) or 
 
 The debug APK is written to `app/build/outputs/apk/debug/`.
 
-Release build (no signing configured in-repo):
+Release build (signing is optional; see [Release signing](#release-signing)):
 
 ```bash
 ./gradlew assembleRelease
@@ -88,8 +88,9 @@ ErrorActivity
 | Component | Role |
 |-----------|------|
 | `MainFragment` | Builds browse rows and handles focus / click navigation. |
+| `MovieCatalog` | Loads series metadata and poster URLs from `assets/catalog.json`. |
 | `CardPresenter` | Leanback presenter for series poster cards. |
-| `VideoDetailsFragment` | Loads poster bitmaps asynchronously and builds the details UI. |
+| `VideoDetailsFragment` | Loads poster bitmaps on a background executor and builds the details UI. |
 | `PicassoBackgroundManager` | Cross-fades background images on the browse and details screens. |
 | `Movie` | Serializable model passed to the details screen via intent extras. |
 
@@ -98,9 +99,18 @@ Package: `com.example.androidtvapp`. Application ID: `com.example.androidtvapp` 
 ## Configuration
 
 - **App label** — `app/src/main/res/values/strings.xml` (`app_name`).
-- **Sample content** — Row titles, descriptions, and image URLs are defined in `MainFragment` and `VideoDetailsFragment` (replace with your own data source for real apps).
+- **Sample content** — Edit `app/src/main/assets/catalog.json` and files under `app/src/main/assets/posters/`. See [docs/SAMPLE_CONTENT.md](docs/SAMPLE_CONTENT.md).
 - **Theming** — Leanback theme in `res/values/styles.xml` and colors in `colors.xml`.
 - **ProGuard** — Rules in `app/proguard-rules.pro` (minification is off for release in the default config).
+
+### Release signing
+
+Debug builds use the default debug keystore. Release builds are unsigned until you configure signing:
+
+1. Copy `keystore.properties.example` to `keystore.properties` (gitignored) and fill in paths and passwords, **or**
+2. Export `ANDROID_KEYSTORE_PATH`, `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`, and `ANDROID_KEY_PASSWORD`.
+
+Do not commit keystores or passwords. Generate your own release keystore locally when you publish.
 
 ## Screenshots
 
@@ -126,4 +136,4 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE).
 
 ## Acknowledgments
 
-Sample poster URLs point to third-party sites for demonstration only. Replace them with licensed assets in derivative work.
+Bundled posters and optional network fallbacks are documented in [docs/SAMPLE_CONTENT.md](docs/SAMPLE_CONTENT.md). Replace sample art with licensed assets in derivative work.
