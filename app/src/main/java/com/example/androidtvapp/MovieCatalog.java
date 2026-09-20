@@ -43,6 +43,11 @@ public final class MovieCatalog {
         return sInstance;
     }
 
+    /** Reload poster URLs after preference changes (e.g. network fallback toggle). */
+    public static synchronized void reload(Context context) {
+        sInstance = load(context.getApplicationContext());
+    }
+
     public List<Movie> getSeries() {
         return Collections.unmodifiableList(mSeries);
     }
@@ -111,6 +116,9 @@ public final class MovieCatalog {
         String assetPath = imageSpec.optString("assetPath", null);
         if (assetPath != null && !assetPath.isEmpty() && assetExists(context.getAssets(), assetPath)) {
             return "file:///android_asset/" + assetPath;
+        }
+        if (!AppPreferences.isNetworkPosterFallbackEnabled(context)) {
+            return null;
         }
         return imageSpec.optString("fallbackUrl", null);
     }
