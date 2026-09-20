@@ -10,6 +10,7 @@
 [![targetSdk](https://img.shields.io/badge/targetSdk-35-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](app/build.gradle)
 [![AGP](https://img.shields.io/badge/AGP-8.7.3-2D2D2D?style=flat-square&logo=androidstudio&logoColor=white)](build.gradle)
 [![Gradle](https://img.shields.io/badge/Gradle-8.9-2D2D2D?style=flat-square&logo=gradle&logoColor=white)](gradle/wrapper/gradle-wrapper.properties)
+[![Version catalog](https://img.shields.io/badge/Version%20catalog-libs.versions.toml-2D2D2D?style=flat-square&logo=gradle&logoColor=white)](gradle/libs.versions.toml)
 
 Sample [AndroidX Leanback](https://developer.android.com/training/tv/start/start) app for Android TV: browse rows, poster cards, a details screen with related items, and D-pad–friendly navigation. Use it to learn TV UI patterns—not as a production streaming product.
 
@@ -20,8 +21,10 @@ Sample [AndroidX Leanback](https://developer.android.com/training/tv/start/start
 | Leanback browse home (Movies grid + Series card row) | Video playback, DRM, or live streaming |
 | Details screen with related-videos row (sample data) | User accounts, auth, or a backend API |
 | Sample catalog in [`app/src/main/assets/catalog.json`](app/src/main/assets/catalog.json) with bundled posters | Production content licensing or CDN integration |
-| Focus-driven backgrounds via `PicassoBackgroundManager` | Kotlin, Compose, or multi-module architecture |
-| Sample error screen from the Movies row | Analytics, ads, or store distribution setup |
+| Focus-driven backgrounds via `PicassoBackgroundManager` | Kotlin, Compose-first UI, or multi-module architecture |
+| Leanback **Settings** (search icon) — poster fallback, background delay, version | Analytics, ads, or store distribution setup |
+| Splash screen API + release R8/shrink (sample ProGuard rules) | Baseline Profile / Macrobenchmark harness |
+| Sample error screen from the Movies row | |
 
 ## Features
 
@@ -29,14 +32,16 @@ Sample [AndroidX Leanback](https://developer.android.com/training/tv/start/start
 - **Details** — Full-width overview for a selected series, plus a related-videos row (sample data).
 - **Dynamic backgrounds** — Background art updates when rows and cards are focused (`PicassoBackgroundManager`).
 - **Error flow** — Selecting *ErrorFragment* in the Movies row opens a sample error screen.
-- **TV-only** — Declares `leanback` as required and uses the `LEANBACK_LAUNCHER` intent category.
+- **Settings** — Opens from the browse **search** affordance; `LeanbackPreferenceFragmentCompat` toggles network poster fallback and background cross-fade delay.
+- **Splash screen** — AndroidX SplashScreen on cold start for main, details, error, and settings flows.
+- **TV-only** — Declares `leanback` as required, landscape activities, optional gamepad, and `LEANBACK_LAUNCHER`.
 
 ## Requirements
 
 | Tool | Version |
 |------|---------|
 | JDK | 17 |
-| Android Gradle Plugin | 8.7.3 (`build.gradle`) |
+| Android Gradle Plugin | 8.7.3 ([`gradle/libs.versions.toml`](gradle/libs.versions.toml)) |
 | Gradle | 8.9 (wrapper) |
 | Android SDK | API 35 (`compileSdk` / `targetSdk`) |
 | Minimum device API | 24 |
@@ -102,6 +107,9 @@ DetailsActivity
 
 ErrorActivity
   └── ErrorFragment (sample error UI)
+
+SettingsActivity (search on browse)
+  └── SettingsFragment (Leanback preferences)
 ```
 
 | Component | Role |
@@ -112,6 +120,8 @@ ErrorActivity
 | `VideoDetailsFragment` | Loads poster bitmaps on a background executor and builds the details UI. |
 | `PicassoBackgroundManager` | Cross-fades background images on the browse and details screens. |
 | `Movie` | Serializable model passed to the details screen via intent extras. |
+| `AppPreferences` | Default shared preferences backing the settings screen. |
+| `TvUi` | Splash screen install and `WindowCompat` decor setup. |
 
 Package: `com.example.androidtvapp`. Application ID: `com.example.androidtvapp` (configurable in `app/build.gradle`).
 
@@ -120,7 +130,8 @@ Package: `com.example.androidtvapp`. Application ID: `com.example.androidtvapp` 
 - **App label** — `app/src/main/res/values/strings.xml` (`app_name`).
 - **Sample content** — Edit `app/src/main/assets/catalog.json` and files under `app/src/main/assets/posters/`. See [docs/SAMPLE_CONTENT.md](docs/SAMPLE_CONTENT.md).
 - **Theming** — Leanback theme in `res/values/styles.xml` and colors in `colors.xml`.
-- **ProGuard** — Rules in `app/proguard-rules.pro` (minification is off for release in the default config).
+- **ProGuard / R8** — Release builds use minify + resource shrink; rules in `app/proguard-rules.pro`.
+- **Dependencies** — Centralized in [`gradle/libs.versions.toml`](gradle/libs.versions.toml) (Gradle Version Catalog).
 
 ### Release signing
 
