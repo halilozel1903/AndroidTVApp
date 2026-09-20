@@ -3,11 +3,11 @@
 [![Android CI](https://github.com/halilozel1903/AndroidTVApp/actions/workflows/android-ci.yml/badge.svg)](https://github.com/halilozel1903/AndroidTVApp/actions/workflows/android-ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-2D2D2D?style=flat-square&logo=opensourceinitiative&logoColor=white)](LICENSE)
 [![Java](https://img.shields.io/badge/Java-17-2D2D2D?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![AndroidX Leanback](https://img.shields.io/badge/AndroidX%20Leanback-1.1.0--rc02-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](https://developer.android.com/jetpack/androidx/releases/leanback)
+[![AndroidX Leanback](https://img.shields.io/badge/AndroidX%20Leanback-1.2.0-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](https://developer.android.com/jetpack/androidx/releases/leanback)
 
 [![minSdk](https://img.shields.io/badge/minSdk-24-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](app/build.gradle)
-[![compileSdk](https://img.shields.io/badge/compileSdk-34-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](app/build.gradle)
-[![targetSdk](https://img.shields.io/badge/targetSdk-34-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](app/build.gradle)
+[![compileSdk](https://img.shields.io/badge/compileSdk-35-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](app/build.gradle)
+[![targetSdk](https://img.shields.io/badge/targetSdk-35-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](app/build.gradle)
 [![AGP](https://img.shields.io/badge/AGP-8.7.3-2D2D2D?style=flat-square&logo=androidstudio&logoColor=white)](build.gradle)
 [![Gradle](https://img.shields.io/badge/Gradle-8.9-2D2D2D?style=flat-square&logo=gradle&logoColor=white)](gradle/wrapper/gradle-wrapper.properties)
 
@@ -38,7 +38,7 @@ Sample [AndroidX Leanback](https://developer.android.com/training/tv/start/start
 | JDK | 17 |
 | Android Gradle Plugin | 8.7.3 (`build.gradle`) |
 | Gradle | 8.9 (wrapper) |
-| Android SDK | API 34 (`compileSdk` / `targetSdk`) |
+| Android SDK | API 35 (`compileSdk` / `targetSdk`) |
 | Minimum device API | 24 |
 
 Install [Android Studio](https://developer.android.com/studio) (recommended) or the [command-line SDK tools](https://developer.android.com/studio#command-tools). Set `sdk.dir` in `local.properties` (Android Studio creates this automatically).
@@ -74,7 +74,7 @@ Release build (signing is optional; see [Release signing](#release-signing)):
 
 1. In Android Studio: **Tools → Device Manager → Create device**.
 2. Choose a **TV** hardware profile (for example Android TV (1080p)).
-3. Select a system image with API 24 or higher (API 34 matches this project).
+3. Select a system image with API 24 or higher (API 35 matches this project).
 4. Run the **app** configuration on the TV emulator.
 
 ### Physical Android TV

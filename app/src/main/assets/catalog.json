@@ -20,7 +20,7 @@
       "id": 2,
       "title": "Stranger Things",
       "studio": "Netflix",
-      "description": "This sci-fi anthology series explores a twisted, high-tech near-future where humanity's greatest innovations and darkest instincts collide.",
+      "description": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.",
       "poster": {
         "assetPath": "posters/stranger_things.png",
         "fallbackUrl": "https://commondatastorage.googleapis.com/android-tv/Sample%20videos/Dragon%20Ball/Dragon%20Ball%20Z%20Kai.png"
@@ -31,7 +31,7 @@
       "id": 3,
       "title": "Black Mirror",
       "studio": "Netflix",
-      "description": "When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.",
+      "description": "This anthology series explores a twisted, high-tech near-future where humanity's greatest innovations and darkest instincts collide.",
       "poster": {
         "assetPath": "posters/black_mirror.png",
         "fallbackUrl": "https://commondatastorage.googleapis.com/android-tv/Sample%20videos/Google%20IO/2011/Building%20for%20TV.png"

@@ -8,7 +8,13 @@ Each entry may define `poster.assetPath` (for example `posters/sherlock.png`) un
 
 `file:///android_asset/<assetPath>`
 
-Bundled PNGs ship with the repo so the browse UI works without network access.
+Bundled PNGs ship with the repo so the browse UI works without network access. Each series has a **distinct** poster file (not a shared placeholder). To regenerate the bundled demo art after editing titles, run:
+
+```bash
+python3 scripts/generate_sample_posters.py
+```
+
+The generator produces simple, redistributable artwork keyed to each catalog title.
 
 ## Network fallback
 
