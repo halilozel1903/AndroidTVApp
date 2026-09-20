@@ -1,5 +1,10 @@
 {
   "version": 1,
+  "metadata": {
+    "title": "Leanback sample catalog",
+    "description": "Fictional series for browse and details demos. Posters are bundled under assets/posters/ with optional HTTPS fallbacks.",
+    "locale": "en"
+  },
   "browseGridBackground": {
     "assetPath": "backgrounds/grid_selection.png",
     "fallbackUrl": "https://commondatastorage.googleapis.com/android-tv/Sample%20videos/April%20Fool%27s%202013/Avatar.png"

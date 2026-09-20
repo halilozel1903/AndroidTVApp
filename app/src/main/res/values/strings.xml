@@ -14,4 +14,14 @@
     <string name="error_fragment_message">An error occurred</string>
     <string name="dismiss_error">Dismiss</string>
     <string name="oops">Oops</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_category_playback">Browse experience</string>
+    <string name="settings_network_fallback_title">Network poster fallback</string>
+    <string name="settings_network_fallback_summary">When a bundled poster asset is missing, load the sample HTTPS URL from catalog.json.</string>
+    <string name="settings_background_delay_title">Background cross-fade delay</string>
+    <string name="settings_background_delay_summary">Wait before swapping the browse background when focus moves between rows.</string>
+    <string name="settings_category_about">About</string>
+    <string name="settings_version_title">App version</string>
+    <string name="settings_version_summary">Version %1$s</string>
 </resources>

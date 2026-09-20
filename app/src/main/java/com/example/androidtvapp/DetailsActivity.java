@@ -8,6 +8,7 @@ public class DetailsActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        TvUi.applyActivityStartup(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
     }

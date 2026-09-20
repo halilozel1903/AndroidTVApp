@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="settings_background_delay_entries">
+        <item>Fast (300 ms)</item>
+        <item>Default (500 ms)</item>
+        <item>Slow (1000 ms)</item>
+    </string-array>
+    <string-array name="settings_background_delay_values">
+        <item>300</item>
+        <item>500</item>
+        <item>1000</item>
+    </string-array>
+</resources>

@@ -91,6 +91,16 @@ public class MainFragment extends BrowseFragment {
 
         setBrandColor(ContextCompat.getColor(getActivity(), R.color.fastlane_background));
         setSearchAffordanceColor(ContextCompat.getColor(getActivity(), R.color.search_opaque));
+
+        setOnSearchClickedListener(view -> {
+            Intent intent = new Intent(getActivity(), SettingsActivity.class);
+            startActivity(intent);
+        });
+    }
+
+    void refreshCatalogRows() {
+        movieCatalog = MovieCatalog.getInstance(getActivity());
+        loadRows();
     }
 
     private void loadRows() {

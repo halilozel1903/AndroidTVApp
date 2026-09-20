@@ -31,7 +31,10 @@ public class PicassoBackgroundManager {
     // Null when no UpdateBackgroundTask is running.
     Timer mBackgroundTimer;
 
-    public PicassoBackgroundManager (Activity activity) {
+    private final Activity mActivity;
+
+    public PicassoBackgroundManager(Activity activity) {
+        mActivity = activity;
         int DEFAULT_BACKGROUND_RES_ID = R.drawable.default_background;
         mDefaultBackground = activity.getDrawable(DEFAULT_BACKGROUND_RES_ID);
         BackgroundManager mBackgroundManager = BackgroundManager.getInstance(activity);
@@ -47,8 +50,8 @@ public class PicassoBackgroundManager {
         }
         mBackgroundTimer = new Timer();
         /* set delay time to reduce too much background image loading process */
-        int BACKGROUND_UPDATE_DELAY = 500;
-        mBackgroundTimer.schedule(new UpdateBackgroundTask(), BACKGROUND_UPDATE_DELAY);
+        int delayMs = AppPreferences.getBackgroundUpdateDelayMs(mActivity);
+        mBackgroundTimer.schedule(new UpdateBackgroundTask(), delayMs);
     }
 
 

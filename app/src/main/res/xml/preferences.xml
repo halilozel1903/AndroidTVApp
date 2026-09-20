@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="@string/settings_category_playback">
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="network_poster_fallback"
+            android:summary="@string/settings_network_fallback_summary"
+            android:title="@string/settings_network_fallback_title"
+            app:iconSpaceReserved="false" />
+
+        <ListPreference
+            android:defaultValue="500"
+            android:entries="@array/settings_background_delay_entries"
+            android:entryValues="@array/settings_background_delay_values"
+            android:key="background_update_delay_ms"
+            android:summary="@string/settings_background_delay_summary"
+            android:title="@string/settings_background_delay_title"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_category_about">
+
+        <Preference
+            android:key="app_version"
+            android:selectable="false"
+            android:title="@string/settings_version_title"
+            app:iconSpaceReserved="false" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
