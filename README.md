@@ -1,8 +1,27 @@
 # Android TV App
 
-Sample Android TV application built with the [AndroidX Leanback](https://developer.android.com/training/tv/start/start) library. It demonstrates a TV-optimized browse experience: category rows, poster cards, a details screen with related items, and remote-friendly navigation.
+[![Android CI](https://github.com/halilozel1903/AndroidTVApp/actions/workflows/android-ci.yml/badge.svg)](https://github.com/halilozel1903/AndroidTVApp/actions/workflows/android-ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-2D2D2D?style=flat-square&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Java](https://img.shields.io/badge/Java-17-2D2D2D?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![AndroidX Leanback](https://img.shields.io/badge/AndroidX%20Leanback-1.1.0--rc02-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](https://developer.android.com/jetpack/androidx/releases/leanback)
 
-Sample movies and series come from `app/src/main/assets/catalog.json` with bundled poster assets and documented network fallbacks (Picasso). The project is a learning reference, not a production streaming client.
+[![minSdk](https://img.shields.io/badge/minSdk-24-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](app/build.gradle)
+[![compileSdk](https://img.shields.io/badge/compileSdk-34-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](app/build.gradle)
+[![targetSdk](https://img.shields.io/badge/targetSdk-34-2D2D2D?style=flat-square&logo=android&logoColor=3DDC84)](app/build.gradle)
+[![AGP](https://img.shields.io/badge/AGP-8.7.3-2D2D2D?style=flat-square&logo=androidstudio&logoColor=white)](build.gradle)
+[![Gradle](https://img.shields.io/badge/Gradle-8.9-2D2D2D?style=flat-square&logo=gradle&logoColor=white)](gradle/wrapper/gradle-wrapper.properties)
+
+Sample [AndroidX Leanback](https://developer.android.com/training/tv/start/start) app for Android TV: browse rows, poster cards, a details screen with related items, and D-pad–friendly navigation. Use it to learn TV UI patterns—not as a production streaming product.
+
+### Scope
+
+| Included | Not included |
+|----------|----------------|
+| Leanback browse home (Movies grid + Series card row) | Video playback, DRM, or live streaming |
+| Details screen with related-videos row (sample data) | User accounts, auth, or a backend API |
+| Sample catalog in [`app/src/main/assets/catalog.json`](app/src/main/assets/catalog.json) with bundled posters | Production content licensing or CDN integration |
+| Focus-driven backgrounds via `PicassoBackgroundManager` | Kotlin, Compose, or multi-module architecture |
+| Sample error screen from the Movies row | Analytics, ads, or store distribution setup |
 
 ## Features
 
@@ -17,7 +36,7 @@ Sample movies and series come from `app/src/main/assets/catalog.json` with bundl
 | Tool | Version |
 |------|---------|
 | JDK | 17 |
-| Android Gradle Plugin | 8.7.x (see root `build.gradle`) |
+| Android Gradle Plugin | 8.7.3 (`build.gradle`) |
 | Gradle | 8.9 (wrapper) |
 | Android SDK | API 34 (`compileSdk` / `targetSdk`) |
 | Minimum device API | 24 |
